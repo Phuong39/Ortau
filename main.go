@@ -1,10 +1,9 @@
 package main
 
 import (
+	"Ortau/conf"
 	. "Ortau/reverseproxy"
-	"Ortau/static"
 	"fmt"
-	"log"
 	"net/http"
 	"net/url"
 )
@@ -25,16 +24,18 @@ func (p *ReverseProxy) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	fmt.Printf("\033[1;31;40m%s\033[0m",static.Banner)
-	fmt.Println("aaaaaa")
+	//fmt.Printf("\033[1;31;40m%s\033[0m",static.Banner)
+	//
+	//localIpAddress := ":5056"
+	//proxyHandle := &ReverseProxy{RedirectUrl: "http://www.jd.com"}
+	//log.Printf("proxy addr: %v, RedirectUrl: %v\n", localIpAddress, proxyHandle)
+	//
+	//err := http.ListenAndServe(localIpAddress, proxyHandle)
+	//if err != nil {
+	//	log.Fatalln("ListenAndServe: ", err)
+	//}
 
-	localIpAddress := "127.0.0.1:5056"
-	proxyHandle := &ReverseProxy{RedirectUrl: "http://www.proxygateway.com"}
-	log.Printf("proxy addr: %v, RedirectUrl: %v\n", localIpAddress, proxyHandle)
-
-	err := http.ListenAndServe(localIpAddress, proxyHandle)
-	if err != nil {
-		log.Fatalln("ListenAndServe: ", err)
-	}
+	a:=conf.GetCfgSectionKey("one","path")
+	fmt.Println(a)
 
 }

@@ -1,0 +1,8 @@
+github.com/clod-moon/goconf v0.0.0-20191014062510-03cddbcd7da9 h1:2lhgHwr9UghBCm/ynLVJjHgh9Irzd10e9qLYrm1RvKs=
+github.com/clod-moon/goconf v0.0.0-20191014062510-03cddbcd7da9/go.mod h1:ZrenXbcdFgLwck5G3Ynm6UGfTPgrg21yNxpJKXHZO9c=
+gopkg.in/gcfg.v1 v1.2.3 h1:m8OOJ4ccYHnx2f4gQwpno8nAX5OGOh7RLaaz0pj3Ogs=
+gopkg.in/gcfg.v1 v1.2.3/go.mod h1:yesOnuUOFQAhST5vPY4nbZsb/huCgGGXlipJsBn0b3o=
+gopkg.in/ini.v1 v1.66.2 h1:XfR1dOYubytKy4Shzc2LHrrGhU0lDCfDGG1yLPmpgsI=
+gopkg.in/ini.v1 v1.66.2/go.mod h1:pNLf8WUiyNEtQjuu5G5vTm06TEv9tsIgeAvK8hOrP4k=
+gopkg.in/warnings.v0 v0.1.2 h1:wFXVbFY8DY5/xOe1ECiWdKCzZlxgshcYVNkBHstARME=
+gopkg.in/warnings.v0 v0.1.2/go.mod h1:jksf8JmL6Qr/oQM2OXTHunEvvTAsrWBLb6OOjuVWRNI=
