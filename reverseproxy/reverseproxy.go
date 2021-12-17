@@ -1,5 +1,5 @@
 /*
-重新修改一下httputil中的NewSingleHostReverseProxy函数，以实现反代至域名。
+重新修改一下net/http/httputil中的NewSingleHostReverseProxy函数，以解决无法反代至域名的问题。
 */
 package reverseproxy
 
@@ -10,10 +10,11 @@ import (
 	"strings"
 )
 
+//Copy from net/http/httputil and add some code to replace NewSingleHostReverseProxy()
 func NewProxy(target *url.URL) *httputil.ReverseProxy {
 	targetQuery := target.RawQuery
 	director := func(req *http.Request) {
-		req.Host = target.Host // -- 加入这句 --
+		req.Host = target.Host    //<- add
 		req.URL.Scheme = target.Scheme
 		req.URL.Host = target.Host
 		req.URL.Path, req.URL.RawPath = joinURLPath(target, req.URL)
@@ -30,6 +31,7 @@ func NewProxy(target *url.URL) *httputil.ReverseProxy {
 	return &httputil.ReverseProxy{Director: director}
 }
 
+//Copy from net/http/httputil
 func singleJoiningSlash(a, b string) string {
 	aslash := strings.HasSuffix(a, "/")
 	bslash := strings.HasPrefix(b, "/")
@@ -41,7 +43,7 @@ func singleJoiningSlash(a, b string) string {
 	}
 	return a + b
 }
-
+//Copy from net/http/httputil
 func joinURLPath(a, b *url.URL) (path, rawpath string) {
 	if a.RawPath == "" && b.RawPath == "" {
 		return singleJoiningSlash(a.Path, b.Path), ""
