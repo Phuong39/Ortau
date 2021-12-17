@@ -52,6 +52,6 @@ func GetCfgSectionKey(section string, key string) string {
 			break
 		}
 	}
-	
+
 	return cfgValue
 }
